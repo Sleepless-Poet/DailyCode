@@ -1,9 +1,3 @@
-'''
-This program is a social network model.
-Author: Jetlee, to my friend Fan.
-'''
-
-
 import random
 import pdb
 import time
@@ -39,9 +33,10 @@ def compute_degree(num=0, p1=0, p2=0, p3=0, p4=0):
 					records = 1
 			if p1 <= 0.001:
 				p1=0.001
-				p2=0.2562
-				p3=0.3964
+				p2=0.3964
+				p3=0.2562
 				p4=0.3464
+				records = 1
 
 		elif p1 < r <= p1+p2:
 			degree_sum += 2
@@ -210,7 +205,7 @@ def reconnet(extra_node_pre, degree_sum, node):
 					#pdb.set_trace()
 					record2 = node3
 					break
-		print 'reconnet:%d,%d\n'%(node1, node2)
+		#print 'reconnet:%d,%d\n'%(node1, node2)
 
 	node3 = record2
 	node[node1][0] += 1
@@ -269,8 +264,6 @@ def del_edge(extra_node_pre, degree_sum, extra_node_pre_abs, node):
 	return extra_node_pre_abs ,extra_node_pre, node 
 
 
-
-
 if __name__ == '__main__':
 	num = 50
 	p1, p2, p3, p4 = 0.35, 0.25, 0.2, 0.2
@@ -284,7 +277,7 @@ if __name__ == '__main__':
 
 	x = []
 	y = []
-	s = len(result) 
+	s = len(node) 
 	for idx in result:
 		x.append(idx)
 		y.append(result[idx]/float(s))
